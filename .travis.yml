@@ -12,6 +12,8 @@ env:
     - AWS_SOURCE_AMI='ami-a10897d6'
 
 notifications:
+  email:
+    - ptdorf@gmail.com
   slack:
     rooms:
       secure: SeQnD6lnc9fb+vFbHL7DPDyPgcu6M4CS7SIbyRK4M92Fs0TDKsBOHLcN1oLdmevoNWwL52K66CNncj5//ojE0UEYOMZbbjnPKlk7HhpgCpUqFM+09mpdIFti0rAWSrJ+supoUn07LksBnqmGRHwmsC2EeUieK4O6vuJLPDnyoeXDVG9mRUcYhL4T2FUt/jpme7kOqZA5A+Z6kqXeomv88rXkelc95MEfI6+2KF3bX9uTHvsxq7PU5NjAcocgnNmVlvpyZMJtrFVdgLewq0y0ShmK35yjMkwqh01MM7rVPZspBaQh5eNeG6GZx48uQEoUntli3qb3RrMRy4hngSKbhFZ29O93ypVCRHa5N5b2oRqSXiIVUiTIFRV5kQEmipGFdyZV52pYuud+n+9x6AKXkiGgs8Gcd5/Ll2VoQCeBjNHJG3ZeZs+LqEl7izEi7iPL0LU3cA1OKEX/3RdFv9/EswrJJky3WxhExUYzUnL+AWQY7qf1q59Uk3ADmcFFaI2bXZxAEnBaUOa35HfBkUoUkXn0a3dl74cZ3S90Y3A/gc1yZ/7FKufHddNdaDp9+pMLzSGotamYw4PmrjR4MNcQY3TnBjP4PaTu3QTQXvk5WknOLCsUEuWK+NloJfCjDMENzZ+vY8nEFVsoe4UX88K1DgOmWQoqCj/kxKg3xxk3nJk=
