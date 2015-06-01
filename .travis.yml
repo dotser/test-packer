@@ -1,0 +1,7 @@
+language: bash
+
+before_install:
+  - bash travis/packer-install.sh
+
+script: 
+  - bash travis/packer-build.sh

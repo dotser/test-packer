@@ -1,0 +1,48 @@
+{
+  "variables":{
+      "name"                  : "packer-test",
+      "aws_access_key"        : "{{env `AWS_ACCESS_KEY`}}",
+      "aws_secret_key"        : "{{env `AWS_SECRET_KEY`}}",
+      "ec2_source_ami"        : "{{env `AWS_SOURCE_AMI`}}",
+      "ec2_region"            : "eu-west-1",
+      "ec2_instance_type"     : "t2.medium",
+      "ec2_ssh_username"      : "ec2-user",
+      "ec2_ssh_timeout"       : "10m"
+   },
+   "builders":[
+      {
+         "type"                        : "amazon-ebs",
+         "access_key"                  : "{{user `aws_access_key`}}",
+         "secret_key"                  : "{{user `aws_secret_key`}}",
+         "region"                      : "{{user `ec2_region`}}",
+         "source_ami"                  : "{{user `ec2_source_ami`}}",
+         "instance_type"               : "{{user `ec2_instance_type`}}",
+         "ssh_username"                : "{{user `ec2_ssh_username`}}",
+         "ssh_timeout"                 : "{{user `ec2_ssh_timeout`}}",
+         "temporary_key_pair_name"     : "key-{{user `name`}}",
+         "ami_name"                    : "{{user `name`}}-{{isotime | clean_ami_name}}",
+         "name"                        : "{{user `name`}}",
+         "run_tags": {
+            "Name"                     : "{{user `name`}} [Packer Builder]"
+         },
+         "tags": {
+            "Name"                     : "{{user `name`}}",
+            "base_ami"                 : "{{user `ec2_source_ami`}}"
+         }
+      }
+   ],
+   "provisioners": [
+      {
+         "type":        "file",
+         "source":      "files",
+         "destination": "/tmp"
+      },
+     {
+         "type"   : "shell",
+         "scripts": [
+            "packer/provisioners/shell/files.sh",
+            "packer/provisioners/shell/flask.sh"
+         ]
+      }
+   ]
+}
