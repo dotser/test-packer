@@ -11,20 +11,19 @@
    },
    "builders":[
       {
-         "type"                        : "amazon-ebs",
-         "access_key"                  : "{{user `aws_access_key`}}",
-         "secret_key"                  : "{{user `aws_secret_key`}}",
-         "region"                      : "{{user `ec2_region`}}",
-         "source_ami"                  : "{{user `ec2_source_ami`}}",
-         "instance_type"               : "{{user `ec2_instance_type`}}",
-         "ssh_username"                : "{{user `ec2_ssh_username`}}",
-         "ssh_timeout"                 : "{{user `ec2_ssh_timeout`}}",
-         "temporary_key_pair_name"     : "key-{{user `name`}}",
-         "ami_name"                    : "{{user `name`}}-{{isotime | clean_ami_name}}",
-         "name"                        : "{{user `name`}}",
+         "type"               : "amazon-ebs",
+         "access_key"         : "{{user `aws_access_key`}}",
+         "secret_key"         : "{{user `aws_secret_key`}}",
+         "region"             : "{{user `ec2_region`}}",
+         "source_ami"         : "{{user `ec2_source_ami`}}",
+         "instance_type"      : "{{user `ec2_instance_type`}}",
+         "ssh_username"       : "{{user `ec2_ssh_username`}}",
+         "ssh_timeout"        : "{{user `ec2_ssh_timeout`}}",
+         "ami_name"           : "{{user `name`}}-{{isotime | clean_ami_name}}",
+         "name"               : "{{user `name`}}",
          "tags": {
-            "Name"                     : "{{user `name`}}",
-            "base_ami"                 : "{{user `ec2_source_ami`}}"
+            "Name"            : "{{user `name`}}",
+            "base_ami"        : "{{user `ec2_source_ami`}}"
          }
       }
    ],
