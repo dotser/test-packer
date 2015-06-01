@@ -2,8 +2,7 @@ language: bash
 sudo: required
 
 before_install:
-  - ls -la travis/
-  - bash travis/packer-install.sh
+- bash travis/packer-install.sh
 
-script: 
-  - bash travis/packer-build.sh
+script:
+- bash travis/packer-build.sh
