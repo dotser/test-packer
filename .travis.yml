@@ -1,5 +1,4 @@
 language: bash
-sudo: required
 
 before_install:
   - bash travis/packer-install.sh
@@ -10,3 +9,8 @@ script:
 env:
   global:
     - AWS_SOURCE_AMI='ami-a10897d6'
+
+notifications:
+  slack:
+    rooms:
+      - { secure: W+kZypu9ixb2UkkiTop1QIB0T0AYGFBcNUQcLNVpjDm/EI73vAzBGvQBNou414sFzykGXVFE9pMcmDl8n0RriYSVwI0CD0OxV9npRVdwC6ZqyViHGXsxuJfDWxlDjXagGZryLhoovkk4jJ1wBgqGSIt0MxvE94fcYguITfJwpfmfYPwHbKyEv0jPpjoRrWpCQcR3BEKoyM9xERlEC1fWeoSMFDj9+hSMJEdMioUFTsXzUF5G6w2eT4KlYdjlsHXbkfn7TpBg6FxrmndcRQIVZjeYn8FEuwoGCuWwymr02xCd37r1Mx+OOVnjVqOkA9aDrFvTICuILs/4PVCPnb9IfinblWr6Ie2Keq6XmShWw6AJqrC2/uVET8MK8w3BQknIUwFywQmoehE+hFMem8lIN5kPQBEsTWzjwPnIvXm/C6ZXZz3QxCW/DnAayvTEBGWLpRFF5duhg8vhAp39TXAVhmCzAd3fGTFf0ejfA0A2J60fAZIfItQ/TGV9NtyJKJx+CHEqRdVtKH0/pOmBxtC2uHxX5GsiJ0fN1MXdO/2FLY4D/yHIuhZCEvvhtGSfZVzk9rIZLOhYWQrJcb5do1AcsUXRY0AcP0VKAj61cKcY3+bHb+2hkbcclpvSKne3APksUrvn6jf1cw/Y/C1ujE+sCdffEHGe/Ajhtdbzn7oR9q8= }
