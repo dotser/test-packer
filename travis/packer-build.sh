@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 set -eu
 
-packer -machine-readable build packer/template.json
+packer build packer/template.json
