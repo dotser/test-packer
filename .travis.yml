@@ -1,4 +1,5 @@
 language: bash
+sudo: required
 
 before_install:
   - bash travis/packer-install.sh
