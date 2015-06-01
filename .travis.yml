@@ -2,9 +2,11 @@ language: bash
 sudo: required
 
 before_install:
-- bash travis/packer-install.sh
+  - bash travis/packer-install.sh
 
 script:
-- bash travis/packer-build.sh
+  - bash travis/packer-build.sh
 
-env: AWS_SOURCE_AMI='ami-a10897d6'
+env:
+  global:
+    - AWS_SOURCE_AMI='ami-a10897d6'
