@@ -1,3 +1,4 @@
 # test-packer
 
-Boilerplate for packer AMIs.
+Boilerplate for packer built AMIs.
+
